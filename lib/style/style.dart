@@ -71,13 +71,13 @@ void ErrorToast(msg) {
 InputDecoration AppInputDecoration(label) {
   return InputDecoration(
     focusedBorder: const OutlineInputBorder(
-      borderSide: const BorderSide(color: colorGreen, width: 1),
+      borderSide: const BorderSide(color: colorRed, width: 1),
     ),
     fillColor: colorWhite,
     filled: true,
     contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 20),
     enabledBorder: const OutlineInputBorder(
-      borderSide: const BorderSide(color: colorWhite, width: 0.0),
+      borderSide: const BorderSide(color: colorGreen, width: 1.0),
     ),
     border: OutlineInputBorder(),
     labelText: label,
@@ -94,7 +94,7 @@ ButtonStyle AppButtonStyle() {
 Ink SuccessButtonChild(String ButtonText) {
   return Ink(
     decoration: BoxDecoration(
-        color: colorGreen, borderRadius: BorderRadius.circular(6)),
+        color: colorLightYellow, borderRadius: BorderRadius.circular(6)),
     child: Container(
       height: 45,
       alignment: Alignment.center,
