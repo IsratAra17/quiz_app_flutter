@@ -1,4 +1,7 @@
 import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 const colorYellow=Color.fromRGBO(255, 192, 0, 1);
 const colorRed = Color.fromRGBO(231, 28, 36, 1);
 const colorDark = Color.fromRGBO(136, 28, 32, 1);
@@ -63,5 +66,42 @@ void ErrorToast(msg) {
     backgroundColor: colorRed,
     textColor: colorWhite,
     fontSize: 16.0,
+  );
+}
+InputDecoration AppInputDecoration(label) {
+  return InputDecoration(
+    focusedBorder: const OutlineInputBorder(
+      borderSide: const BorderSide(color: colorGreen, width: 1),
+    ),
+    fillColor: colorWhite,
+    filled: true,
+    contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 20),
+    enabledBorder: const OutlineInputBorder(
+      borderSide: const BorderSide(color: colorWhite, width: 0.0),
+    ),
+    border: OutlineInputBorder(),
+    labelText: label,
+  );
+}
+
+ButtonStyle AppButtonStyle() {
+  return ElevatedButton.styleFrom(
+      elevation: 1,
+      padding: EdgeInsets.zero,
+      backgroundColor: Colors.transparent,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)));
+}
+Ink SuccessButtonChild(String ButtonText) {
+  return Ink(
+    decoration: BoxDecoration(
+        color: colorGreen, borderRadius: BorderRadius.circular(6)),
+    child: Container(
+      height: 45,
+      alignment: Alignment.center,
+      child: Text(
+        ButtonText,
+        style: ButtonTextStyle(),
+      ),
+    ),
   );
 }
